@@ -35,7 +35,11 @@ App::when('/search', function () {
 
     $ids = array_keys($sphinxResult['matches']);
 
-    $result = App::get('pdo')->query("SELECT * FROM core_notice WHERE id IN (".implode(',', $ids).")" );
+    $result = App::get('pdo')->query("SELECT n.*, i.relative_url AS \"image_url\" FROM core_notice n
+                                      INNER JOIN core_noticeimage i ON i.notice_id = n.id
+                                      WHERE n.id IN (".implode(',', $ids).")" );
 
-    echo json_encode($result->fetchAll(\PDO::FETCH_ASSOC));
+    $docs = $result->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode($docs);
 });
