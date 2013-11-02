@@ -1,0 +1,32 @@
+/*
+|--------------------
+| Fonts
+|--------------------
+*/
+
+@font-face {
+    font-family: 'FuturaLTLight';
+    src: url('font/futuralt-light.ttf') format('truetype');
+    src: url('font/futuralt-light.eot');
+    src: url('font/futuralt-light.eot') format('embedded-opentype'),
+         url('font/futuralt-light.woff') format('woff'),
+         url('font/futuralt-light.svg#FuturaLTLight') format('svg');
+}
+
+@font-face {
+    font-family: 'FuturaStdBold';
+    src: url('font/futurastd-bold.ttf') format('truetype');
+    src: url('font/futurastd-bold.eot'),
+         url('font/futurastd-bold.eot') format('embedded-opentype'),
+         url('font/futurastd-bold.woff') format('woff'),
+         url('font/futurastd-bold.svg#FuturaStdBold') format('svg');
+}
+
+@font-face {
+    font-family: 'FuturaLTBook';
+    src: url('font/futuralt-book.ttf') format('truetype');
+    src: url('font/futuralt-book.eot');
+    src: url('font/futuralt-book.eot') format('embedded-opentype'),
+         url('font/futuralt-book.woff') format('woff'),
+         url('font/futuralt-book.svg#FuturaLTBook') format('svg');
+}

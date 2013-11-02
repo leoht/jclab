@@ -6,12 +6,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>MuséeLab | Accueil</title>
+        <title>JocondeLab</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
         <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/font.css">
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/main.css">
 
     </head>
@@ -21,16 +23,31 @@
         <![endif]-->
 
         <header>
-            <h1>JocondeLab</h1>
+            <img class="show-menu" src="images/menu.png" />
         </header>
+
+        <nav>
+
+        </nav>
 
         <div class="main" >
 
-            <div class="search" >
-                <input type="text" name="search" id="search" />
+            <div class="tabs" >
+                <div class="search-tab active-tab" >
+                    Recherche
+                </div>
+                <div class="collection-tab" >
+                    Ma collection
+                </div>
             </div>
 
-            <div class="result" >
+            <div class="search" >
+                <div class="search-fakebutton" >
+                </div>
+                <input type="text" name="search" id="search" placeholder="Rechercher..." />
+            </div>
+
+            <div class="collection" >
 
             </div>
         </div>

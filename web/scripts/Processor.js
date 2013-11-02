@@ -4,6 +4,11 @@ var displayedImages = [];
 
 var Processor = {
 
+    /*
+    |-------------------------------------
+    | Process results
+    |-------------------------------------
+    */
     processResults: function (data) {
         // console.log(data)
 
@@ -15,13 +20,22 @@ var Processor = {
         })
     },
 
+    /*
+    |-------------------------------------
+    | Process each
+    | search result.
+    |  
+    | Updates the autocompletion array
+    | and displays the results to the user.
+    |-------------------------------------
+    */
     process: function (doc) {
         console.log(doc)
 
         Object.keys(doc).forEach(function (key) {
             var value = String(doc[key])
             // value = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase() // capitalize
-            if (0 > autocompleteArray.indexOf(value) && 0 > value.indexOf(';') && (key == 'epoq' || key == 'deno' || key == 'autr')) {
+            if (0 > autocompleteArray.indexOf(value) && 0 > value.indexOf(';') && (key == 'titr' || key == 'epoq' || key == 'deno' || key == 'autr')) {
                 autocompleteArray.push(value) 
             }
         })
@@ -30,7 +44,7 @@ var Processor = {
         img = img[0]
 
         if (0 > displayedImages.indexOf(img)) {
-            $('<img/>').css({ maxWidth: 100, maxHeight: 100 }).attr('src', IMAGE_URI_BASE+img).appendTo($('.result'))
+            // $('<img/>').css({ maxWidth: 100, maxHeight: 100 }).attr('src', IMAGE_URI_BASE+img).appendTo($('.result'))
             displayedImages.push(img)
         }
         

@@ -13,4 +13,5 @@ App::load('config.php');
 // Loads the routes
 App::load('routes.php');
 
+// Run it man!
 App::run();
