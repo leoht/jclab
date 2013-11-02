@@ -43,3 +43,12 @@ App::when('/search', function () {
 
     echo json_encode($docs);
 });
+
+/*
+ |-------------
+ | 404
+ |-------------
+*/
+App::notFound(function () {
+    App::load('views/404.php');
+});
