@@ -29,7 +29,13 @@
         </header>
 
         <nav>
-            <a href="/jocondelab2/web/account" >Mon compte</a>
+            <a href="/jocondelab2/web/account" <?php 
+
+            if (false === Apricot\Apricot::session('user')) {
+                echo 'class="open-login-popup" ';
+            }
+
+            ?> >Mon compte</a>
             <a href="/jocondelab2/web/collections" >Mes collections</a>
             <a href="/jocondelab2/web/about" >à propos</a>
             <a href="/jocondelab2/web/contact" >Contact</a>

@@ -1,5 +1,14 @@
 <?php Apricot\Apricot::load('views/header.php') ?>
 
+    <?php if (true) : ?>
+
+        <!-- <div class="intro" >
+            <div class="intro_logo" >
+            </div>
+        </div> -->
+
+    <?php endif; ?>
+
         <div class="main" >
 
             <div class="tabs" >

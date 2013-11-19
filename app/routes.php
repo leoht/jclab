@@ -16,6 +16,8 @@ use Apricot\Apricot as App;
 */
 App::when('/', function () {
 
+    $firstVisit = App::cookie('first_visit', true);
+
     App::load('views/index.php');
 
 });
@@ -26,22 +28,20 @@ App::when('/', function () {
  |-------------
 */
 App::when('/search', function () {
+    App::load('controllers/search.php');
+});
 
-    $sphinx = App::get('sphinx');
+/*
+ |-------------
+ | Account
+ |-------------
+*/
+App::when('/account', function () {
+    App::load('controllers/account.php');
+});
 
-    $query = App::parameter('q'); // get the query from the URI
-
-    $sphinxResult = $sphinx->Query($query, 'notices');
-
-    $ids = array_keys($sphinxResult['matches']);
-
-    $result = App::get('pdo')->query("SELECT n.*, i.relative_url AS \"image_url\" FROM core_notice n
-                                      INNER JOIN core_noticeimage i ON i.notice_id = n.id
-                                      WHERE n.id IN (".implode(',', $ids).")" );
-
-    $docs = $result->fetchAll(PDO::FETCH_ASSOC);
-
-    echo json_encode($docs);
+App::when('/about', function () {
+    // about
 });
 
 /*

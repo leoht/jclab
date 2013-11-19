@@ -341,6 +341,8 @@ trait Http
         }
 
         self::setCookie($name, $content, $expire, $path, $domain, $secure, $httponly);
+
+        return false;
     }
 
     /**

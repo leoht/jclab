@@ -34,8 +34,9 @@ var Processor = {
 
         Object.keys(doc).forEach(function (key) {
             var value = String(doc[key])
+            
             // value = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase() // capitalize
-            if (0 > autocompleteArray.indexOf(value) && 0 > value.indexOf(';') && (key == 'titr' || key == 'epoq' || key == 'deno' || key == 'autr')) {
+            if (0 > autocompleteArray.indexOf(value) && 0 > value.indexOf(';') && (key == 'titr' || key == 'deno' || key == 'autr')) {
                 autocompleteArray.push(value) 
             }
         })

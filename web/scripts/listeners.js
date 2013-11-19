@@ -13,7 +13,7 @@
     | Search submit
     |---------------
     */
-    $('#search').keyup(function (e) {
+    $('#search').keypress(function (e) {
         var query = $(this).val()
         Search.fetchResults(query, function (data) {
             Processor.processResults(data)
@@ -54,6 +54,16 @@
             marginLeft: '-=300px',
             marginTop: '17px'
         })
+    })
+
+
+    $('a.open-login-popup').click(function (e) {
+        e.preventDefault()
+
+        $('.login-popup').fadeIn(300)
+        $('.overlay').fadeIn(300)
+
+        $('.login-popup form #username').focus()
     })
 
 }) (jQuery);
